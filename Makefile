@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -g -O2
-LIBS = -lssl -lz -lcap -lcrypto
+LIBS = -lssl -lz  -lcap -lcrypto
 INSTALL=/usr/bin/install -c
 prefix=/usr/local
 bindir=$(prefix)${exec_prefix}/bin

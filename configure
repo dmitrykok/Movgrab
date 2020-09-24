@@ -3278,7 +3278,7 @@ if ${ac_cv_lib_ssl_OPENSSL_init_ssl+:} false; then :
   $as_echo_n "(cached) " >&6
 else
   ac_check_lib_save_LIBS=$LIBS
-LIBS="-lssl  $LIBS"
+LIBS="-lssl $LIBS -lcap -lcrypto"
 cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -3313,7 +3313,7 @@ if test "x$ac_cv_lib_ssl_OPENSSL_init_ssl" = xyes; then :
 #define HAVE_LIBSSL 1
 _ACEOF
 
-  LIBS="-lssl $LIBS"
+  LIBS="-lssl $LIBS -lcap -lcrypto"
 
 fi
 
