@@ -24,8 +24,9 @@ fi
 
 if test "$cf_use_ssl" = "yes" 
 then
-AC_CHECK_LIB(ssl,SSL_library_init,,)
-cf_have_libssl=$ac_cv_lib_ssl_SSL_library_init
+#AC_CHECK_LIB(ssl,OPENSSL_init_ssl,,)
+AC_CHECK_LIB(ssl,OPENSSL_init_ssl,,)
+cf_have_libssl=$ac_cv_lib_ssl_OPENSSL_init_ssl
 
 AC_CHECK_LIB(crypto,EVP_CIPHER_CTX_init,,)
 cf_have_libcrypto=$ac_cv_lib_crypto_EVP_CIPHER_CTX_init

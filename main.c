@@ -35,7 +35,7 @@ int Type=TYPE_NONE;
 
 
 
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 ListNode *Curr, *Next;
 int OverrideType=TYPE_NONE;
