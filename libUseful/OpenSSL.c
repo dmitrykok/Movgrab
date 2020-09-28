@@ -160,12 +160,12 @@ int INTERNAL_SSL_INIT()
 
     if (InitDone) return(TRUE);
 
-    SSL_library_init();
+    OPENSSL_init_ssl(0, NULL);
 #ifdef HAVE_OPENSSL_ADD_ALL_ALGORITHMS
     OpenSSL_add_all_algorithms();
 #endif
     SSL_load_error_strings();
-    Tempstr=MCopyStr(Tempstr,"openssl:",SSLeay_version(SSLEAY_VERSION)," : ", SSLeay_version(SSLEAY_BUILT_ON), " : ",SSLeay_version(SSLEAY_CFLAGS),NULL);
+    Tempstr = MCopyStr(Tempstr, "openssl:", SSLeay_version(SSLEAY_VERSION), " : ", SSLeay_version(SSLEAY_BUILT_ON), " : ", SSLeay_version(SSLEAY_CFLAGS));
     LibUsefulSetValue("SSL:Library", Tempstr);
     LibUsefulSetValue("SSL:Level", "tls");
     DestroyString(Tempstr);
